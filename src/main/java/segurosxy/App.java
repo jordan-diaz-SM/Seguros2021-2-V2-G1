@@ -45,6 +45,12 @@ public class App {
         UbigeoContext ubigeoTrabajo = new UbigeoContext( "15", "01", "25");
         cliente.setUbigeoTrabajo( ubigeoTrabajo );
 
+        UbigeoContext ubigeoLugarNac = new UbigeoContext( "15", "01", "24");
+        cliente.setUbigeoLugarNac( ubigeoLugarNac );
+
+        UbigeoContext ubigeoDNI = new UbigeoContext( "15", "01", "24");
+        cliente.setUbigeoDNI( ubigeoDNI );
+
         cliente.printUbigeos();
 
 

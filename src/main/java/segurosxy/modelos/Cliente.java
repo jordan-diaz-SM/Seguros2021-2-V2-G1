@@ -11,6 +11,8 @@ public class Cliente {
     private UbigeoContext ubigeoCasa;
     private UbigeoContext ubigeoTrabajo;
     private List<Seguro> seguros;
+    private UbigeoContext ubigeoLugarNac;
+    private UbigeoContext ubigeoDNI;
 
     public Cliente(String nombre)   {
 
@@ -57,11 +59,32 @@ public class Cliente {
         this.ubigeoTrabajo = ubigeoTrabajo;
     }
 
+    public UbigeoContext ubigeoLugarNac() {
+        return ubigeoLugarNac;
+    }
+
+    public void setUbigeoLugarNac(UbigeoContext ubigeoLugarNac) {
+        this.ubigeoLugarNac = ubigeoLugarNac;
+    }
+
+    public UbigeoContext ubigeoDNI() {
+        return ubigeoLugarNac;
+    }
+
+    public void setUbigeoDNI(UbigeoContext ubigeoDNI) {
+        this.ubigeoDNI = ubigeoDNI;
+    }
+
+
     public void printUbigeos(){
         if (ubigeoCasa!=null)
             System.out.println("[Ubigeo] Casa: "+ ubigeoCasa.getDepartamento() +", "+ ubigeoCasa.getProvincia() +", "+ ubigeoCasa.getDistrito());
         if (ubigeoTrabajo!=null)
             System.out.println("[Ubigeo] Trabajo: "+ ubigeoTrabajo.getDepartamento() +", "+ ubigeoTrabajo.getProvincia() +", "+ ubigeoTrabajo.getDistrito());
+        if (ubigeoLugarNac!=null)
+            System.out.println("[Ubigeo] Lugar Nacimiento: "+ ubigeoLugarNac.getDepartamento() +", "+ ubigeoLugarNac.getProvincia() +", "+ ubigeoLugarNac.getDistrito());
+        if (ubigeoDNI!=null)
+            System.out.println("[Ubigeo] DNI: "+ ubigeoDNI.getDepartamento() +", "+ ubigeoDNI.getProvincia() +", "+ ubigeoDNI.getDistrito());    
     }
 
 

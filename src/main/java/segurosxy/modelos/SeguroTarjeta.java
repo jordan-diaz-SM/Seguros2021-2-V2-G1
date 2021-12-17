@@ -1,5 +1,7 @@
 package segurosxy.modelos;
 
+import segurosxy.modelos.patrones.InspeccionEstado;
+
 public class SeguroTarjeta extends Seguro {
 
 
@@ -24,5 +26,10 @@ public class SeguroTarjeta extends Seguro {
     public String getDetalleSeguro() {
 
         return "Seg. Tarjeta Numero: " + this.numero + " con riesgo: " + this.nivelRiesgo;
+    }
+
+    @Override
+    public void aprobarSeguro(InspeccionEstado inspeccionEstado){
+
     }
 }

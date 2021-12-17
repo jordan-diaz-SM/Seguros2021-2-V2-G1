@@ -3,6 +3,8 @@ package segurosxy.modelos;
 import java.util.ArrayList;
 import java.util.List;
 
+import segurosxy.modelos.interfaces.Iinspeccion;
+import segurosxy.modelos.patrones.TipoInspeccion;
 import segurosxy.modelos.patrones.UbigeoContext;
 
 public class Cliente {
@@ -13,6 +15,8 @@ public class Cliente {
     private List<Seguro> seguros;
     private UbigeoContext ubigeoLugarNac;
     private UbigeoContext ubigeoDNI;
+    private TipoInspeccion inspeccionEstado;
+    
 
     public Cliente(String nombre)   {
 
@@ -87,5 +91,9 @@ public class Cliente {
             System.out.println("[Ubigeo] DNI: "+ ubigeoDNI.getDepartamento() +", "+ ubigeoDNI.getProvincia() +", "+ ubigeoDNI.getDistrito());    
     }
 
+    public void verificarInspeccion(Iinspeccion inspeccion){
+        inspeccion.inspeccionar();
+        System.out.println();
+    }
 
 }

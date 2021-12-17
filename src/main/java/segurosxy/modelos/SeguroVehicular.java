@@ -1,6 +1,7 @@
 package segurosxy.modelos;
 
 import segurosxy.modelos.interfaces.ICobertura;
+import segurosxy.modelos.patrones.TipoInspeccion;
 
 public class SeguroVehicular extends Seguro {
 
@@ -35,5 +36,10 @@ public class SeguroVehicular extends Seguro {
         cobertura.calculaCobertura();
         
         System.out.println();
+    }
+
+    @Override
+    public void aprobarSeguro(TipoInspeccion inspeccionEstado){
+        
     }
 }

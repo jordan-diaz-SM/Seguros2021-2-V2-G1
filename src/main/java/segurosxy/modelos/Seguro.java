@@ -2,6 +2,9 @@ package segurosxy.modelos;
 
 import java.util.Random;
 
+import segurosxy.modelos.interfaces.Iinspeccion;
+import segurosxy.modelos.patrones.TipoInspeccion;
+
 public abstract class Seguro {
 
     protected Integer numero;
@@ -11,6 +14,8 @@ public abstract class Seguro {
     protected String bancoTarjeta;
     protected String marca;
     protected String modelo;
+
+    protected Iinspeccion inspeccion;
 
     public Seguro() {
         this.numero = new Random().nextInt();
@@ -47,4 +52,6 @@ public abstract class Seguro {
     public abstract String getDetalleSeguro();
 
     public abstract void cacularRiesgo();
+
+    public abstract void aprobarSeguro(TipoInspeccion inspeccionEstado);
 }

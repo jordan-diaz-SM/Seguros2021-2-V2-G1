@@ -5,8 +5,10 @@ import segurosxy.modelos.Impresora;
 import segurosxy.modelos.Poliza;
 import segurosxy.modelos.SeguroTarjeta;
 import segurosxy.modelos.SeguroVehicular;
+import segurosxy.modelos.VentaSeguro;
 import segurosxy.modelos.interfaces.ICobertura;
 import segurosxy.modelos.interfaces.IImprimible;
+import segurosxy.modelos.interfaces.Iinspeccion;
 import segurosxy.modelos.patrones.*;
 
 public class App {
@@ -20,7 +22,7 @@ public class App {
         seguro.cacularRiesgo();
 
         // Agregrando cobertura al seguro
-        ICobertura cobertura = new CoberturaTodoRiesgoDecorator( new CoberturaPorRoboDecorator( new CoberturaBasicaVehicular() ) );
+        ICobertura cobertura = new CoberturaPorRoboDecorator(new CoberturaTodoRiesgoDecorator( new CoberturaBasicaVehicular()  ));
         seguro.calcularCobeturaVehicular( cobertura );
 
         cliente.setCompraSeguro(seguro);
@@ -57,6 +59,18 @@ public class App {
         SeguroVehicular seguro3 = new SeguroVehicular("Nissan","Sentra");
         ICobertura cobertura2 = new CoberturaPorChoqueDecorator( new CoberturaBasicaVehicular() );
         seguro3.calcularCobeturaVehicular( cobertura2 );
+
+        //INSPECCION PARA EL CLIENTE
+        //Iinspeccion inspeccion = new InspeccionJudicialDecorator( new InspeccionSaludDecorator(new InspeccionInicialVivienda()));   
+           
+        //cliente.verificarInspeccion(inspeccion);
+
+        //Creamos una nueva clase venta seguro
+        TipoInspeccion tipoInspeccion = new TipoInspeccion(true,false,false,true);
+        VentaSeguro ventaseguro = new VentaSeguro(cliente);
+
+        ventaseguro.aprobarSeguro(tipoInspeccion);
+
     }
 
 }

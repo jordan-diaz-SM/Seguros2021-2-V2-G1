@@ -1,6 +1,6 @@
 package segurosxy.modelos;
 
-import segurosxy.modelos.patrones.InspeccionEstado;
+import segurosxy.modelos.patrones.TipoInspeccion;
 
 public class SeguroTarjeta extends Seguro {
 
@@ -29,7 +29,16 @@ public class SeguroTarjeta extends Seguro {
     }
 
     @Override
-    public void aprobarSeguro(InspeccionEstado inspeccionEstado){
+    public String armarSalidaTexto() {
+        StringBuffer salida = new StringBuffer();
+        salida.append("Imprimiendo Seguro Formato CSV\n");
+        salida.append("-----------------------------------\n");
+        salida.append("Banco Tarjeta,Marca,Modelo,Nivel Riesgo,Numero");
+        salida.append(this.bancoTarjeta+","+marca+","+modelo+","+nivelRiesgo+","+numero);
+        salida.append("-----------------------------------\n");
 
+        return salida.toString();
     }
+    
+
 }

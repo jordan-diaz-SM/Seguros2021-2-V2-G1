@@ -1,12 +1,12 @@
 package segurosxy.modelos.patrones;
 
-public class InspeccionEstado {
+public class TipoInspeccion {
     private boolean InspeccionVivienda = true;
     private boolean InspeccionJudicial= false;
     private boolean InspeccionSalud = false;
     private boolean InspeccionFinanciera = false;
     
-    public InspeccionEstado(boolean inspeccionVivienda, boolean inspeccionJudicial, boolean inspeccionSalud,
+    public TipoInspeccion(boolean inspeccionVivienda, boolean inspeccionJudicial, boolean inspeccionSalud,
             boolean inspeccionFinanciera) {
         InspeccionVivienda = inspeccionVivienda;
         InspeccionJudicial = inspeccionJudicial;

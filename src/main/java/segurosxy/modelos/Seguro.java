@@ -53,5 +53,6 @@ public abstract class Seguro {
 
     public abstract void cacularRiesgo();
 
-    public abstract void aprobarSeguro(TipoInspeccion inspeccionEstado);
+    public abstract String armarSalidaTexto();
+
 }

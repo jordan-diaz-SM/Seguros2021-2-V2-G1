@@ -41,19 +41,6 @@ public class App {
 
         cliente.getListaSeguroCliente();
 
-        // Agregar Ubigeos para el cliente
-        UbigeoContext ubigeoCasa = new UbigeoContext( "15", "01", "25");
-        cliente.setUbigeoCasa( ubigeoCasa );
-        UbigeoContext ubigeoTrabajo = new UbigeoContext( "15", "01", "25");
-        cliente.setUbigeoTrabajo( ubigeoTrabajo );
-
-        UbigeoContext ubigeoLugarNac = new UbigeoContext( "15", "01", "24");
-        cliente.setUbigeoLugarNac( ubigeoLugarNac );
-
-        UbigeoContext ubigeoDNI = new UbigeoContext( "15", "01", "24");
-        cliente.setUbigeoDNI( ubigeoDNI );
-
-        cliente.printUbigeos();
 
 
         SeguroVehicular seguro3 = new SeguroVehicular("Nissan","Sentra");
@@ -71,6 +58,34 @@ public class App {
 
         ventaseguro.aprobarSeguro(tipoInspeccion);
 
+        //CSV
+        System.out.println(seguro3.armarSalidaTexto());
+
+        //a Bytes
+        Impresora.imprimir( new SeguroBytes( seguro3).armarSalidaTexto() );
+
+         // Agregar Pais de Cliente
+         PaisContext paisNacimiento = new PaisContext( "PE");
+         cliente.setPaisNacimiento(paisNacimiento);
+         PaisContext paisDomicilio = new PaisContext( "PE");
+         cliente.setPaisDomicilio(paisDomicilio);
+
+         cliente.printPaises();
+
+          // Agregar Ubigeos para el cliente
+        UbigeoContext ubigeoCasa = new UbigeoContext( "15", "01", "25");
+        cliente.setUbigeoCasa( ubigeoCasa );
+        UbigeoContext ubigeoTrabajo = new UbigeoContext( "15", "01", "25");
+        cliente.setUbigeoTrabajo( ubigeoTrabajo );
+
+        UbigeoContext ubigeoLugarNac = new UbigeoContext( "15", "01", "24");
+        cliente.setUbigeoLugarNac( ubigeoLugarNac );
+
+        UbigeoContext ubigeoDNI = new UbigeoContext( "15", "01", "24");
+        cliente.setUbigeoDNI( ubigeoDNI );
+
+        cliente.printUbigeos();
+        
     }
 
 }

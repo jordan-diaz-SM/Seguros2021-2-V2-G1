@@ -16,7 +16,7 @@ public class VentaSeguro extends Seguro {
         this.cliente = cliente;
     }
 
-    @Override
+
     public void aprobarSeguro (TipoInspeccion tipoInspeccion){
         
         boolean tipoSalud = tipoInspeccion.getInspeccionSalud();
@@ -50,5 +50,12 @@ public class VentaSeguro extends Seguro {
     @Override
     public String getDetalleSeguro() {
         return null;
+    }
+
+
+    @Override
+    public String armarSalidaTexto() {
+        // TODO Auto-generated method stub
+        return "";
     }
 }

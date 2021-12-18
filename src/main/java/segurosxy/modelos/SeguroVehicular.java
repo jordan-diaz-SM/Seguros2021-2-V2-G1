@@ -39,7 +39,15 @@ public class SeguroVehicular extends Seguro {
     }
 
     @Override
-    public void aprobarSeguro(TipoInspeccion inspeccionEstado){
-        
+    public String armarSalidaTexto() {
+        StringBuffer salida = new StringBuffer();
+        salida.append("Imprimiendo Seguro Formato CSV\n");
+        salida.append("-----------------------------------\n");
+        salida.append("Banco Tarjeta,Marca,Modelo,Nivel Riesgo,Numero\n");
+        salida.append(bancoTarjeta+","+this.marca+","+this.modelo+","+nivelRiesgo+","+ numero +"\n");
+        salida.append("-----------------------------------\n");
+
+        return salida.toString();
     }
+
 }
